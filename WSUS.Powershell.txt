@@ -18,3 +18,6 @@ Set-ItemProperty -Path $WindowsUpdateRegKey -Name WUServer -Value $WSUSServer -T
 
 # Specify the Statistics server 
 Set-ItemProperty -Path $WindowsUpdateRegKey -Name WUStatusServer -Value $StatServer -Type String
+
+#You might have to restart the automatic update service for the changes to take effect
+Restart-Service wuauserv -Force
